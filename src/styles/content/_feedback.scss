@@ -1,0 +1,216 @@
+@import '../utils';
+
+.user-feedback {
+  @include flex(column, top, center);
+
+  .section-1 {
+    @include flex(row, space-between, center);
+    background: linear-gradient(
+      42.69deg,
+      rgba(222, 11, 11, 0.17) -10.81%,
+      rgba(255, 255, 255, 0.45) 107.24%
+    );
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 50px 10%;
+
+    @include responsive768 {
+      flex-direction: column;
+      height: auto;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .feedback-context {
+      @include flex(column, center);
+      flex: 1;
+
+      @include responsive768 {
+        padding-top: 20px;
+        align-items: center;
+      }
+
+      h1 {
+        color: $primary-theme-color;
+      }
+
+      p {
+        text-align: justify;
+        line-height: 23px;
+        max-width: 330px;
+        @include responsive768 {
+          text-align: center;
+          max-width: unset;
+        }
+      }
+    }
+
+    .feedback-design {
+      @include flex(row, center, center);
+      height: 220px;
+      width: 200px;
+      flex: 1;
+      background-image: url('/icons/feedback-design.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include responsive768 {
+        flex: unset;
+        width: 200px;
+        padding-bottom: 50px;
+      }
+      @include responsive480 {
+        flex: unset;
+        width: 200px;
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  .section-2 {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 0.5px solid #cdcdcd;
+    margin-top: 50px;
+    padding: 50px 10%;
+    @include flex(column);
+    box-sizing: border-box;
+
+    @include responsive768 {
+      padding-top: 15px;
+    }
+
+    .section-2-header {
+      @include flex(row, space-between, center);
+      width: 100%;
+      box-sizing: border-box;
+
+      @include responsive768 {
+        @include flex(column, center, center);
+      }
+
+      h1 {
+        color: $primary-theme-color;
+
+        @include responsive768 {
+          text-align: center;
+        }
+      }
+      p {
+        font-size: 0.9em;
+        font-weight: 500;
+      }
+
+      .rate-section {
+        @include flex(row, unset, center);
+        column-gap: 10px;
+
+        @include responsive768 {
+          @include flex(column, center, center);
+        }
+      }
+    }
+
+    .feedback-body-section {
+      @include flex(row);
+      column-gap: 10%;
+
+      @include responsive768 {
+        @include flex(column, center, center);
+      }
+
+      .feedback-form {
+        flex: 1;
+        @include flex(column);
+
+        @include responsive768 {
+          width: 100%;
+          align-items: center;
+        }
+
+        .got-ideas {
+          color: $outline-color-2;
+          font-size: 15px;
+          font-weight: 500;
+
+          @include responsive768 {
+            font-size: 18px;
+            margin-top: 30px;
+            font-weight: 400;
+            text-align: center;
+          }
+        }
+
+        .textarea-input {
+          box-sizing: border-box;
+          margin-top: 35px;
+          border: 0.5px solid #cdcdcd;
+          border-radius: 5px;
+          height: 265px;
+          padding: 20px;
+          outline: $primary-theme-color;
+          font-size: 17px;
+          font-family: $primary-font;
+          resize: none;
+
+          @include responsive768 {
+            height: 150px;
+            width: 100%;
+          }
+
+          &::placeholder {
+            font-size: 14px;
+            font-family: $primary-font;
+          }
+        }
+
+        .synap-default-button {
+          &.send-button {
+            margin-top: 15px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: $primary-theme-color;
+            height: 39px;
+          }
+        }
+      }
+
+      .guide-content {
+        flex: 1;
+        margin-top: 45px;
+
+        .guide-1,
+        .guide-2 {
+          p {
+            margin: 6px 0px;
+          }
+
+          a {
+            margin-top: 5px;
+            color: $primary-theme-color;
+          }
+        }
+
+        .guide-2 {
+          margin-top: 25px;
+        }
+
+        .appreciation {
+          .context-1 {
+            color: $outline-color-3;
+            text-align: justify;
+            line-height: 25px;
+          }
+
+          .context-2 {
+            color: $primary-theme-color;
+          }
+        }
+      }
+    }
+  }
+}

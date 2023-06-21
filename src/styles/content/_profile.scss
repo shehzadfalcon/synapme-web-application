@@ -1,0 +1,326 @@
+@import '../utils';
+
+.profile-page {
+  @include flex(row);
+
+  @include responsive900 {
+    padding: 0;
+    @include flex(column-reverse);
+  }
+
+  .profile-intro {
+    padding: 24px;
+    background-color: white;
+    box-shadow: 0 10px 13px rgba(17, 38, 146, 0.05);
+    border-radius: 24px;
+    @include responsive900 {
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .left-header {
+      @include flex(row, space-between, center);
+      @include responsive900 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .detail {
+        @include flex(row, flex-start, center);
+        width: 60%;
+        gap: 32px;
+        @include responsive900 {
+          gap: 12px;
+          width: 100%;
+        }
+
+        .avatar-name {
+          @include flex(row, space-between, center);
+          .img {
+            width: 64px;
+            min-width: 64px;
+            height: 64px;
+            border-radius: 75%;
+            overflow: hidden;
+            position: unset;
+            @include responsive900 {
+              width: 32px;
+              min-width: 32px;
+              height: 32px;
+            }
+            img {
+              object-fit: cover;
+              width: 100% !important;
+              position: relative !important;
+              height: unset;
+            }
+          }
+          .name {
+            color: $primary-theme-color;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 19px;
+            line-height: 175%;
+            margin-left: 24px;
+            @include responsive900 {
+              margin-left: 12px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .button-group {
+        @include flex(row, flex-end, center);
+        gap: 32px;
+        width: 100%;
+        @include responsive900 {
+          gap: 8px;
+        }
+
+        .profile-more {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .left-description {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 175%;
+      color: $outline-color-3;
+
+      span {
+        margin-left: 4px;
+        color: $primary-theme-color;
+        cursor: pointer;
+      }
+    }
+
+    .sub-page-header {
+      @include flex(row, space-between, center);
+      border: 0 solid $outline-color-3;
+      padding-bottom: 16px;
+      border-bottom-width: 0.5px;
+      @include responsive900 {
+        flex-direction: column;
+      }
+
+      .sub-tabs {
+        @include flex(row, flex-start, center);
+        gap: 32px;
+        @include responsive900 {
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+      }
+    }
+
+    .articles {
+      margin-top: 8px;
+      @include responsive900 {
+        .MuiCardActions-root {
+          padding: 8px 0;
+        }
+      }
+
+      &.network {
+        &::-webkit-scrollbar {
+          width: 8px;
+          border-radius: 20px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #de0b0b;
+          border-radius: 20px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: #f2f8fd;
+        }
+      }
+
+      .Debate-card {
+        box-shadow: none;
+        border-bottom: 1px solid #e9ecef;
+        padding: 8px;
+
+        .debate-article-card-body {
+          padding: 8px;
+          @include flex(row, space-between, center);
+
+          @include responsive900 {
+            @include flex(column-reverse, space-between, center);
+          }
+
+          .actions-button {
+            @include flex(row, space-between, center);
+            width: 200px;
+            margin-right: 10px;
+
+            @include responsive900 {
+              margin: 0px;
+              width: 100%;
+              @include flex(row, center, center);
+            }
+          }
+          .vs-users {
+            @include flex(row, space-between, center);
+
+            @include responsive900 {
+              width: 100%;
+              max-width: 600px;
+            }
+
+            .each-profile {
+              @include flex(row);
+              margin: 10px;
+
+              .profile-image {
+                width: 48px;
+                height: 48px;
+              }
+            }
+          }
+
+          svg {
+            height: 30px;
+            color: $outline-color-1;
+          }
+
+          .share {
+            width: 120px;
+            padding-right: 0px;
+            color: $primary-theme-color;
+
+            &.desk {
+              @include responsive900 {
+                display: none;
+              }
+            }
+
+            &.mobile {
+              display: none;
+              @include responsive900 {
+                @include flex(row, center, center);
+                width: auto;
+              }
+            }
+            svg {
+              color: $primary-theme-color;
+            }
+          }
+        }
+
+        .debate-footer {
+          @include flex(row, space-between, center);
+        }
+
+        .default-profile-img {
+          box-sizing: unset;
+          width: 48px;
+          height: 48px;
+          border-radius: 50px;
+          margin-right: 30px;
+
+          @include responsive900 {
+            margin-right: 15px;
+          }
+        }
+
+        .debate-link {
+          color: #141414;
+          text-decoration: underline;
+          font-weight: 500;
+          line-height: 30px;
+          font-size: 17px;
+
+          &.desk {
+            @include responsive900 {
+              display: none;
+            }
+          }
+          &.mobile {
+            display: none;
+            @include responsive900 {
+              display: block;
+              text-align: center;
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+        .debate-date {
+          color: $outline-color-1;
+          font-size: 0.9em;
+
+          &.desk {
+            @include responsive900 {
+              display: none;
+            }
+          }
+
+          &.mobile {
+            display: none;
+            @include responsive900 {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .news {
+      margin-top: 8px;
+    }
+  }
+
+  .profile-neural-network {
+    padding: 24px;
+    background-color: white;
+    box-shadow: 0 10px 13px rgba(17, 38, 146, 0.05);
+    border-radius: 12px;
+
+    @include responsive900 {
+      padding: 0;
+      background-color: white;
+      box-shadow: none;
+      width: 100%;
+    }
+
+    .title {
+      margin-bottom: 12px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 23px;
+      line-height: 130%;
+      @include responsive900 {
+        font-size: 16px;
+        color: #141414;
+        margin-bottom: 32px;
+      }
+    }
+
+    .neural-network-requests {
+      margin: 8px;
+      // width: 300px;
+      @include responsive900 {
+        height: 220px;
+        overflow-y: auto;
+        padding-right: 20px;
+        &::-webkit-scrollbar {
+          width: 4px;
+          border-radius: 18px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #de0b0b;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: #f2f8fd;
+        }
+      }
+    }
+  }
+}

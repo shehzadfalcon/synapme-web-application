@@ -1,0 +1,370 @@
+@import '../utils';
+
+.synap-default-button {
+  border-radius: 50px;
+  height: 36px;
+  padding: 0px 16px;
+  outline: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  @include flex(row, center, center);
+
+  p {
+    white-space: nowrap;
+  }
+
+  svg {
+    height: 17px;
+    width: 17px;
+  }
+
+  .default-icon {
+    padding-right: 6px;
+    height: 17px;
+    width: 17px;
+  }
+
+  &.variant-1 {
+    background-color: $primary-theme-color;
+    white-space: nowrap;
+  }
+
+  &.variant-2 {
+    background-color: $primary-background-color;
+    color: $primary-theme-color;
+    border: 1px solid $primary-theme-color;
+  }
+
+  &.primary-nav-button {
+    background-color: transparent;
+    color: $outline-color-1;
+
+    p {
+      margin-left: 6px;
+      white-space: nowrap;
+    }
+
+    &.responsive {
+      @include responsive480 {
+        width: 40px;
+      }
+
+      p {
+        @include responsive1024 {
+          display: none;
+        }
+      }
+
+      svg {
+        @include responsive1024 {
+          height: 23px;
+          width: 23px;
+        }
+      }
+    }
+
+    &.selected {
+      background-color: $primary-theme-color;
+      color: $primary-white-font-color;
+    }
+
+    &:hover {
+      background-color: $default-hover-color;
+    }
+  }
+}
+
+.default-link {
+  text-decoration: none;
+}
+
+.tag-detail-el {
+  @include flex(row, center, center);
+  gap: 4px;
+  width: fit-content;
+  cursor: pointer;
+  height: 36px;
+  white-space: nowrap;
+
+  .tag-detail-left {
+    color: $outline-color-2;
+  }
+
+  .tag-detail-right {
+    color: $outline-color-3;
+  }
+
+  &.active {
+    background: $primary-theme-color;
+    border-radius: 50px;
+    padding: 8px 16px;
+
+    .tag-detail-left {
+      color: $white-font-color;
+    }
+
+    .tag-detail-right {
+      color: $white-font-color;
+    }
+  }
+}
+
+.news-section {
+  display: flex;
+  border-bottom: 1px solid $outline-color-3;
+  margin-bottom: 18px;
+  width: 350px;
+
+  .section-b {
+    margin-left: 5px;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 12px;
+
+      .language {
+        color: #de0b0b;
+        font-size: 16px;
+      }
+
+      .time {
+        font-size: 16px;
+      }
+    }
+
+    .title-name {
+      font-size: 16px;
+      margin-left: 14px;
+    }
+
+    .icon-button-disabled {
+      font-size: 16px;
+    }
+
+    .icon-button-disabled-shared {
+      color: #de0b0b;
+      font-size: 16px;
+    }
+  }
+}
+
+.neural-network-element {
+  @include flex(row, space-between, center);
+  margin: 24px 0;
+  gap: 8px;
+  @include responsive900 {
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0px 10px 13px rgba(17, 38, 146, 0.05);
+    border-radius: 24px;
+    padding: 16px 37px;
+    align-items: flex-start;
+  }
+
+  .name-status {
+    @include flex(row, flex-start, center);
+    gap: 8px;
+
+    .img {
+      min-width: 64px;
+      width: 64px;
+      height: 64px;
+      border-radius: 75%;
+      overflow: hidden;
+      position: unset;
+
+      img {
+        object-fit: cover;
+        width: 100% !important;
+        position: relative !important;
+        height: unset;
+      }
+    }
+  }
+
+  .synap-default-button {
+    &.accept {
+      background-color: unset;
+      border: 1px solid $primary-theme-color;
+      color: $primary-theme-color;
+    }
+
+    &.decline {
+      background-color: $primary-theme-color;
+    }
+  }
+}
+
+.input-container {
+  height: 36px;
+  border: 1px solid $outline-color-1;
+  border-radius: 19px;
+  @include flex(row, center, center);
+  padding-left: 12px;
+  padding-right: 12px;
+  flex-grow: 1;
+  width: 100%;
+
+  &.header-input-web {
+    margin-left: 15px;
+    @include responsive768 {
+      display: none;
+    }
+  }
+
+  input {
+    width: 50px;
+  }
+
+  &.header-input-mobile {
+    border: none;
+    flex-grow: unset;
+    width: 130px;
+
+    input {
+      color: $white-font-color;
+      width: 80px;
+      background-color: $outline-color-2;
+
+      &::placeholder {
+        color: $primary-white-font-color;
+      }
+    }
+
+    svg {
+      color: $primary-white-font-color;
+    }
+  }
+
+  .default-input {
+    outline: none;
+    border: none;
+    flex-grow: 1;
+  }
+
+  .icon-search {
+    height: 17px;
+    width: 17px;
+    color: $outline-color-1;
+  }
+}
+
+.profile-dropdown-menu {
+  .dropdown-select {
+    & fieldset {
+      border: none;
+    }
+  }
+}
+
+.dropdown-radio-buttons {
+  color: #de0b0b;
+
+  &.Mui-checked {
+    color: #de0b0b;
+  }
+
+  & + span {
+    font-size: 14px;
+    font-weight: 400;
+    color: $outline-color-2;
+  }
+}
+
+.dropdown-radio-buttons + .vote-highest-icon {
+  margin-right: 8px;
+}
+
+.dropdown-radio-buttons + .vote-lowest-icon {
+  margin-right: 8px;
+}
+
+.MuiFormControl-root {
+  .vote-highest-icon,
+  .vote-lowest-icon {
+    display: none;
+  }
+}
+
+.profile-article-card-header {
+  & span {
+    font-size: 13px;
+    color: $outline-color-3;
+  }
+
+  & .MuiCardHeader-subheader {
+    font-size: 19px;
+    font-weight: 500;
+    color: $outline-color-2;
+    line-height: 175%;
+
+    &.vote {
+      text-decoration: underline;
+    }
+  }
+
+  & .card-media-img {
+    border-radius: 24px;
+  }
+}
+
+.profile-card-actions {
+  & .icon-button-disabled {
+    &:hover {
+      background-color: transparent;
+      cursor: text;
+    }
+
+    &.shared {
+      color: $primary-theme-color;
+    }
+  }
+
+  & .shared-block {
+    @include flex(row, flex-end, center);
+    flex-grow: 1;
+  }
+
+  @include responsive900 {
+    .MuiCardActions-root {
+      padding: 0;
+    }
+    .MuiSvgIcon-root {
+      font-size: 16px;
+    }
+  }
+
+  & p {
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 10px;
+    @include responsive900 {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+}
+
+.profile-input-paper {
+  @include flex(row, center, center);
+  height: 61px;
+  margin-bottom: 12px;
+  box-shadow: none;
+  border: 1px solid $outline-color-4;
+  border-radius: 16px;
+  color: red;
+  padding-right: 16px;
+
+  .input-base {
+    margin-left: 8px;
+    flex: 1;
+    padding-left: 16px;
+  }
+
+  @media (max-width: 900px) {
+    height: 36px;
+  }
+}

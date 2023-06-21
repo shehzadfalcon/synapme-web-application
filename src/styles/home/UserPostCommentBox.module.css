@@ -1,0 +1,35 @@
+.comment_box {
+  position: relative;
+}
+
+.comment_box input {
+  width: 100%;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-sizing: border-box;
+  border: 1px solid #e9ecef;
+}
+
+.comment_box input::placeholder {
+  font-size: 16px;
+}
+
+.emoji_and_camera {
+  display: flex;
+  align-items: center;
+  top: 50%;
+  translate: 0% -50%;
+  right: 24px;
+  position: absolute;
+}
+
+.emoji_and_camera img:first-child {
+  width: 24px;
+  height: 24px;
+  margin-right: 42px;
+}
+
+.emoji_and_camera img:last-child {
+  width: 20px;
+  height: 18px;
+}

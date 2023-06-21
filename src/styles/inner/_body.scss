@@ -1,0 +1,281 @@
+@import '../utils';
+
+.main-form {
+  @include flex(row, center, flex-start);
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  @include responsive768 {
+    @include flex(column, unset, center);
+  }
+
+  .synap-context {
+    height: 1000px;
+    width: 464px;
+    box-sizing: border-box;
+    background-image: url('/icons/synap-bg.png');
+    background-size: cover;
+    @include flex(column, flex-start, center);
+    color: $white-font-color;
+    padding: 3em 1em;
+    text-align: center;
+
+    @include responsive768 {
+      width: 100%;
+      height: 300px;
+      background-image: url('/icons/synap-background-mobile.png');
+      padding-top: 4em;
+      margin-bottom: 80px;
+    }
+
+    .synap-icon {
+      width: 5.4em;
+      height: 5.4em;
+      margin-top: 40px;
+    }
+
+    .synap-content-text {
+      font-size: 0.9em;
+      font-weight: 300;
+      line-height: 25px;
+      text-align: justify;
+      padding-left: 20%;
+      padding-right: 20%;
+      margin-top: 3em;
+      @include responsive768 {
+        display: none;
+      }
+    }
+
+    .synap-content-title {
+      font-weight: 600;
+      font-size: 1.6em;
+      line-height: 40px;
+      margin: 0px;
+    }
+  }
+
+  .synap-form {
+    @include flex(row, center, center);
+    flex: 1;
+  }
+
+  .register-form {
+    .row-form {
+      width: 100%;
+      column-gap: 30px;
+
+      @include responsive1024 {
+        flex-direction: column;
+        max-width: 320px;
+      }
+      .field-input {
+        width: 100%;
+      }
+      .select-input {
+        width: 100%;
+        margin-top: 12px;
+
+        @include responsive768 {
+          margin-top: 0px;
+        }
+      }
+    }
+
+    .row-form-2 {
+      width: 100%;
+      @include flex(row, center, flex-end);
+      column-gap: 30px;
+
+      @include responsive1024 {
+        flex-direction: column;
+        max-width: 320px;
+      }
+
+      div {
+        input {
+          height: 28px;
+          padding: 3px 3px 3px 10px;
+        }
+
+        svg {
+          width: 20px;
+        }
+      }
+    }
+
+    .user-info-container {
+      width: 100%;
+
+      @include responsive1024 {
+        margin-top: 15px;
+      }
+
+      input {
+        padding: 5px 5px 5px 0px;
+        width: 100%;
+      }
+
+      .password-input {
+        width: 100%;
+
+        .error-outline {
+          &::before {
+            border-bottom: 1px solid red;
+          }
+        }
+      }
+
+      .select-input {
+        width: 100%;
+      }
+      input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
+    }
+
+    .general-error {
+      color: $primary-theme-color;
+      text-align: left;
+      margin: 0px;
+      width: 440px;
+      margin-top: 7px;
+    }
+  }
+}
+
+.login-form,
+.register-form {
+  @include flex(column, flex-start, center);
+  max-width: 500px;
+  min-width: 380px;
+  margin: 80px 20px 0px 20px;
+  box-sizing: border-box;
+  padding-bottom: 100px;
+
+  @include responsive768 {
+    min-width: 320px;
+    margin-top: 30px;
+  }
+
+  .form-header-text {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0px;
+    color: $outline-color-2;
+  }
+
+  .row-form {
+    @include flex(row, space-between, center);
+    width: 100%;
+
+    @include responsive1024 {
+      padding-bottom: 0px;
+    }
+  }
+
+  .user-info-container {
+    width: 100%;
+    p {
+      color: $outline-color-1;
+      margin: 0px;
+      margin-top: 10px;
+    }
+
+    .error-container {
+      @include flex(row, left, center);
+      position: absolute;
+      margin-top: 5px;
+    }
+
+    .error-message {
+      color: $primary-theme-color;
+    }
+
+    .date-picker {
+      width: 100%;
+      margin-top: 10px;
+
+      &.date-error {
+        fieldset {
+          border-color: $primary-theme-color;
+        }
+      }
+    }
+
+    input {
+      width: 100%;
+      padding-left: 5px;
+    }
+
+    .standard-password-adorment {
+      width: 100%;
+      input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
+    }
+
+    svg {
+      width: 20px;
+    }
+
+    .field-input {
+      width: 100%;
+    }
+
+    .general-input-error-text {
+      margin: 0px;
+      color: $primary-theme-color;
+      font-size: 0.8em;
+    }
+  }
+
+  .remember-me {
+    @include flex(row, space-between, center);
+
+    input {
+      margin-left: 0px;
+    }
+    p {
+      color: $outline-color-1;
+      margin-left: 5px;
+    }
+
+    &.register {
+      @include responsive1024 {
+        width: 320px;
+      }
+    }
+  }
+  .forgot-password-text {
+    color: $primary-theme-color;
+    text-decoration: none;
+  }
+
+  .auth-option {
+    color: $outline-color-2;
+  }
+
+  .identity-provider-icons {
+    @include flex(row, space-between, center);
+    width: 80px;
+
+    .facebook-icon,
+    .google-icon {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .alt-switch {
+    margin-top: 10px;
+    .click-here-signup {
+      text-decoration: none;
+      color: $primary-theme-color;
+    }
+  }
+}

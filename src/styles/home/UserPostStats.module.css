@@ -1,0 +1,49 @@
+.stats {
+  display: flex;
+  padding-bottom: 26px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vote_and_comment {
+  display: flex;
+  margin-left: 27px;
+}
+
+.vote_and_comment div:first-child {
+  margin-right: 18px;
+}
+
+.vote_and_comment div,
+.share {
+  display: flex;
+  align-items: center;
+}
+
+.vote_and_comment div img,
+.share img {
+  margin-right: 15px;
+}
+
+.vote_and_comment div:first-child img {
+  width: 19px;
+  height: 27px;
+}
+
+.vote_and_comment div:last-child img {
+  width: 27px;
+  height: 27px;
+}
+
+.vote_and_comment div p {
+  color: #777777;
+}
+
+.share img {
+  width: 24px;
+  height: 26.5px;
+}
+
+.share p {
+  color: #de0b0b;
+}

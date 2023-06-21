@@ -1,0 +1,164 @@
+@import '../utils';
+
+.synap-footer {
+  @include flex(column, space-between, center);
+  background-color: $primary-theme-color;
+  border-radius: 10px;
+  padding: 3em;
+  width: 100%;
+  color: $primary-white-font-color;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 25px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 50px;
+
+  .footer-body {
+    @include flex(row, space-between);
+    width: 100%;
+    border-bottom: 1px solid $primary-white-font-color;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    padding-top: 45px;
+
+    @include responsive900 {
+      @include flex(column, space-between);
+    }
+
+    .mission-context {
+      @include flex(column);
+      flex: 1;
+      max-width: 300px;
+      margin-right: 30px;
+      position: relative;
+      @include responsive900 {
+        max-width: none;
+        margin-right: 0px;
+      }
+
+      .icon {
+        position: absolute;
+        top: -60px;
+      }
+
+      .text {
+        text-align: justify;
+        margin: 0px;
+      }
+    }
+
+    .synap-pages {
+      @include flex(row, space-between);
+      flex: 1;
+      column-gap: 40px;
+      max-width: 300px;
+      margin: 0px 30px;
+
+      @include responsive900 {
+        max-width: none;
+        margin: 25px 0px;
+        column-gap: 0px;
+      }
+
+      .title {
+        font-weight: 500;
+        font-size: 1em;
+        margin-bottom: 3px;
+      }
+      a {
+        white-space: nowrap;
+        text-decoration: inherit;
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .menu {
+        @include flex(column, left);
+      }
+
+      .others {
+        @include flex(column, left);
+      }
+
+      .support {
+        @include flex(column, left);
+      }
+    }
+
+    .synap-subscription {
+      box-sizing: border-box;
+      @include flex(column, flex-start);
+      margin-left: 30px;
+
+      @include responsive900 {
+        margin-left: 0px;
+      }
+
+      .stay-updated {
+        font-size: 1.3em;
+        font-weight: 500;
+        margin-top: 0px;
+      }
+
+      .subscription-body {
+        background-color: $outline-color-2;
+        border-radius: 5px;
+        padding-right: 5px;
+        height: 36px;
+        @include flex(row, unset, center);
+
+        @include responsive900 {
+          width: 240px;
+        }
+
+        input {
+          height: 100%;
+          border-radius: 5px;
+          outline: none;
+          border: none;
+          width: 160px;
+          padding: 5px 10px;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 300;
+
+          &::placeholder {
+            color: $outline-color-2;
+          }
+        }
+
+        button {
+          height: 100%;
+          width: 100%;
+          border-radius: 5px;
+          border-width: 0px;
+          background-color: $outline-color-2;
+          color: inherit;
+          cursor: pointer;
+        }
+      }
+
+      .subscription-footer {
+        @include flex(row, space-between, center);
+        margin-top: 10px;
+
+        p {
+          font-weight: 500;
+          font-size: 15px;
+        }
+
+        .social-icons {
+          @include flex(row, space-between, center);
+        }
+      }
+    }
+  }
+
+  .right-reserved-synap {
+    @include flex(row, center, center);
+    font-size: 1em;
+  }
+}

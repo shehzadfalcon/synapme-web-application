@@ -1,0 +1,9 @@
+README.md
+.eslintrc.json
+node_modules
+yarn.lock
+package-lock.json
+.github
+.next
+.vscode
+out

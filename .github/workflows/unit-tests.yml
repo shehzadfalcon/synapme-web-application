@@ -1,0 +1,41 @@
+name: synapme-frontend-unit-tests
+on:
+  push:
+    branches:
+      - main
+      - staging
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    branches:
+      - main
+      - staging
+    paths-ignore:
+      - '**.md'
+
+jobs:
+
+  build:
+    name: Build
+
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest]
+      fail-fast: false
+
+    runs-on: ${{ matrix.runs-on }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: yarn install
+        run: yarn install
+
+      - name: Compile
+        run: yarn build

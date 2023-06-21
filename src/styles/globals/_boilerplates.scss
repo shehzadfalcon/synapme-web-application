@@ -1,0 +1,65 @@
+@import "../utils";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+.font-inter *,
+html,
+body,
+* {
+	font-family: $primary-font;
+	font-style: normal;
+}
+
+.font-roboto {
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	padding-top: 70px;
+
+	@include responsive768 {
+		padding-top: 120px;
+	}
+}
+.container-fluid {
+	max-width: 1344px;
+	margin: auto;
+
+	@include responsive900 {
+		padding: 0px 10px;
+	}
+}
+
+.feedback-section {
+	background: linear-gradient(
+		42.69deg,
+		rgba(222, 11, 11, 0.17) -10.81%,
+		rgba(255, 255, 255, 0.45) 107.24%
+	);
+}
+
+/* custom scrollbar  */
+/* width */
+.scrollbar::-webkit-scrollbar,
+#scrollbar::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+/* Track */
+.scrollbar::-webkit-scrollbar-track,
+#scrollbar::-webkit-scrollbar-track {
+	background: #f2f8fd;
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb,
+#scrollbar::-webkit-scrollbar-thumb {
+	background: #de0b0b;
+	border-radius: 40px;
+}
+
+/* // custom input checkbox and radio start */
+
+.gpt-modal {
+	@include flex(row, center, center);
+}
